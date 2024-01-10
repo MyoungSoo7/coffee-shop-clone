@@ -1,0 +1,9 @@
+package com.lms.coffeeshopclone.user.domain;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface PointTransactionRepository extends JpaRepository<PointTransaction, Long> {
+   // List<PointTransaction> findAllByUserId(String userId);
+}

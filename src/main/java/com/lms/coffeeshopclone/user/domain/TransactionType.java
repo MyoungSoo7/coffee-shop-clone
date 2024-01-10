@@ -1,4 +1,5 @@
 package com.lms.coffeeshopclone.user.domain;
 
-public class TransactionType {
+public enum TransactionType {
+    CHARGE, PAYMENT
 }
