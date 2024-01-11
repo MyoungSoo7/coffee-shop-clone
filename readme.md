@@ -4,7 +4,7 @@
 - Spring Boot 3.0.2
 - Java 17
 - JPA
-- MySQL
+- MariaDB
 - Redis
 - Kafka
 - H2 (테스트 코드)
