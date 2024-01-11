@@ -2,12 +2,12 @@ package com.lms.coffeeshopclone.order.application;
 
 
 import com.lms.coffeeshopclone.order.domain.OrderRepository;
-import jakarta.persistence.Cacheable;
 import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +20,8 @@ public class PopularMenuService {
     OrderRepository orderRepository;
     final static String POPULAR_MENU = "POPULAR_MENU";
 
-    // POPULAR_MENU 캐시에 저장
-    //@Cacheable( value= POPULAR_MENU)
+
+    @Cacheable(value = POPULAR_MENU)
     @Transactional
     public List<PopularMenu> getPopularMenuList(){
         return orderRepository.findPopularMenu();

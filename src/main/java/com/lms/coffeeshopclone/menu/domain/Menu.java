@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "`menu`")
 @Data
+// 외부에서 생성불가, 상속클래스에서만 사용
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Menu {
 
