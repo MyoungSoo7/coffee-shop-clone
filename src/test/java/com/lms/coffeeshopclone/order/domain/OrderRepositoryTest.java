@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@ActiveProfiles("local")
+@ActiveProfiles("test")
 @SpringBootTest
 @Transactional
 class OrderRepositoryTest {

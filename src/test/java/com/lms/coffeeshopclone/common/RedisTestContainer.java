@@ -1,4 +1,3 @@
-/*
 package com.lms.coffeeshopclone.common;
 
 
@@ -8,7 +7,7 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.utility.DockerImageName;
 
 @Configuration
-@ActiveProfiles("local")
+@ActiveProfiles("test")
 public class RedisTestContainer {
 
     private static final String REDIS_DOCKER_IMAGE = "redis";
@@ -23,4 +22,3 @@ public class RedisTestContainer {
 
 
 }
-*/
