@@ -13,7 +13,7 @@
 
 ## 설계 및 분석
 - 도메인 설계 : Menu , User, Order ( 커피숍의 주문시스템은 메뉴에서, 사용자가, 주문을 하는 형태이다.)
-- 에러응답,에러코드 : CoffeeException
+- 에러응답,에러코드 : CoffeeException, CoffeeShopErrors
 - 대용량 트래픽 : Kafka (동시성제어를 위한 이벤트메시지브로커)
 - 핵심 문제해결 전략 :가독성
 
