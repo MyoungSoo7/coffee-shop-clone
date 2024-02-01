@@ -1,6 +1,5 @@
 package com.lms.coffeeshopclone.user.domain;
 
-
 import com.lms.coffeeshopclone.common.CoffeeShopBadRequestException;
 import com.lms.coffeeshopclone.common.CoffeeShopErrors;
 import jakarta.persistence.*;

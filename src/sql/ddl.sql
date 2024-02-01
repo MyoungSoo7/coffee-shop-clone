@@ -1,8 +1,7 @@
-/*
--- CREATE DATABASE `coffee`;
--- GRANT ALL PRIVILEGES ON `coffee`.* TO 'coffee'@'localhost' IDENTIFIED BY 'coffee';
--- FLUSH PRIVILEGES;
---
+CREATE DATABASE `coffee`;
+GRANT ALL PRIVILEGES ON `coffee`.* TO 'coffee'@'localhost' IDENTIFIED BY 'coffee';
+FLUSH PRIVILEGES;
+
 
 
 DROP TABLE IF EXISTS `coffee`.`menu`;
@@ -49,4 +48,4 @@ CREATE TABLE `coffee`.`point_transaction`
     `transacted_at`        DATETIME(6) NOT NULL COMMENT '포인트 이력 일시',
     PRIMARY KEY (`point_transaction_id`),
     KEY `idx_user_seq` (`user_seq`)
-);*/
+);

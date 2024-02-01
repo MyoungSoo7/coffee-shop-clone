@@ -25,12 +25,7 @@ public class DatabaseCleanUpExecutor {
     private List<String> getTruncateQueries(final JdbcTemplate jdbcTemplate){
 
         // 테이블 초기화
-        String sql = """
-                 SELECT Concat('TRUNCATE TABLE `', table_name, '`;') AS q 
-                 From information_schema.tables 
-                 WHERE table_schema = 'PUBLIC'
-                """;
-        return jdbcTemplate.queryForList(sql, String.class);
+        return jdbcTemplate.queryForList("SELECT Concat('TRUNCATE TABLE `', TABLE_NAME, '`;') AS q FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'PUBLIC'", String.class);
     }
 
     private void truncateTables(final JdbcTemplate jdbcTemplate, final List<String> truncateQueries){

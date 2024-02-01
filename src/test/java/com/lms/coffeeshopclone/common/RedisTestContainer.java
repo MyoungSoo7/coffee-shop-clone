@@ -1,6 +1,5 @@
 package com.lms.coffeeshopclone.common;
 
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.containers.GenericContainer;
@@ -20,5 +19,5 @@ public class RedisTestContainer {
         System.setProperty("spring.data.redis.port", redisContainer.getMappedPort(6379).toString());
     }
 
-
 }
+

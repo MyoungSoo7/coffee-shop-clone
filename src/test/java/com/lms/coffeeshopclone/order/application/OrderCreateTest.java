@@ -1,11 +1,14 @@
+
 package com.lms.coffeeshopclone.order.application;
 
 import com.lms.coffeeshopclone.DatabaseCleanUpExecutor;
+import com.lms.coffeeshopclone.common.KafkaMessagePublisher;
 import com.lms.coffeeshopclone.menu.domain.Menu;
 import com.lms.coffeeshopclone.menu.domain.MenuRepository;
 import com.lms.coffeeshopclone.order.domain.Order;
 import com.lms.coffeeshopclone.order.domain.OrderRepository;
 import com.lms.coffeeshopclone.user.application.UserPointService;
+import com.lms.coffeeshopclone.user.domain.PointTransaction;
 import com.lms.coffeeshopclone.user.domain.PointTransactionRepository;
 import com.lms.coffeeshopclone.user.domain.User;
 import com.lms.coffeeshopclone.user.domain.UserRepository;
@@ -15,7 +18,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
+
+import java.util.List;
 
 @ActiveProfiles("test")
 @SpringBootTest
@@ -39,8 +45,9 @@ class OrderCreateTest extends DatabaseCleanUpExecutor {
     @Autowired
     private PointTransactionRepository pointTransactionRepository;
 
-   /* @MockBean
-    private KafkaMessagePublisher kafkaMessagePublisher;*/
+    @MockBean
+    private KafkaMessagePublisher kafkaMessagePublisher; // MockBean : 테스트용 빈 등록
+
 
     private User savedUser;
     private Menu savedMenu;
@@ -50,10 +57,12 @@ class OrderCreateTest extends DatabaseCleanUpExecutor {
     void setUp(){
         savedMenu = menuRepository.save(new Menu("아메리카노", 3000L));
         savedUser = userRepository.save(new User("test", 5000L));
+        System.out.println("savedUser = " + savedUser.getUserId());
+        System.out.println("usersequence=>" + savedUser.getUserSeq());
     }
 
 
-/*    @DisplayName("주문 생성 성공")
+    @DisplayName("주문 생성 성공")
     @Test
     void order_success(){
         //given
@@ -65,11 +74,11 @@ class OrderCreateTest extends DatabaseCleanUpExecutor {
         //then
         User user = userRepository.findByUserId(request.getUserId()).get();
         Order order = orderRepository.findById(orderDto.getOrderId()).get();
-       // List<PointTransaction> pointTransactionList = pointTransactionRepository.findAllByUserId(request.getUserId());
+        //List<PointTransaction> pointTransactionList = pointTransactionRepository.findAllByUserId(request.getUserId());
 
         Assertions.assertEquals(5000L - 3000L, user.getUserPoint());
 
-    }*/
+    }
 
 
 
