@@ -4,13 +4,14 @@ package com.lms.coffeeshopclone.user.domain;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "`point_transaction`")
-@Data
+@Table(name = "point_transaction")
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PointTransaction {
 

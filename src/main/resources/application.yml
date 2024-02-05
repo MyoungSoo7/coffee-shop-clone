@@ -1,9 +1,4 @@
 spring:
-#  datasource:
-#    driver-class-name: org.mariadb.jdbc.Driver
-#    url: jdbc:mariadb://localhost:3307/coffee?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
-#    username: ${SPRING_DATASOURCE_USERNAME}
-#    password: ${SPRING_DATASOURCE_PASSWORD}
   datasource:
     url: jdbc:mysql://localhost:3306/coffee
     username: ${SPRING_DATASOURCE_USERNAME}
@@ -11,7 +6,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true

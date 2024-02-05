@@ -3,10 +3,11 @@ package com.lms.coffeeshopclone.order.event;
 
 import com.lms.coffeeshopclone.order.application.OrderDto;
 import lombok.Data;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-@Data
+@Getter
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
 public class OrderCreatedEvent {
