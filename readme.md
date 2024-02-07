@@ -30,6 +30,9 @@
 - 잔액부족 유저의 결제/ 존재하는 회원의 유저포인트 적립
 - 신규/기존 유저 포인트 저장
 
+## 주의사항
+윈도우에서 TDD 사용시 도커를 켜야 작동함
+
  
 ## ERD
 ![image](https://github.com/MyoungSoo7/coffee-shop-clone/assets/13523622/55fd2681-1263-4a56-aada-8f37e97548f0)
